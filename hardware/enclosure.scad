@@ -17,9 +17,14 @@ height = 24;
 wall = 2.0;
 corner_r = 5;
 
-// Screws
-m3_pilot_d = 2.4; // Optimized for M3 self-tapping in plastic
+// Screws & Inserts
+m3_pilot_d = 2.4; // For self-tapping screws
+m3_insert_d = 4.2; // Optimized for standard M3 heat-set inserts
+m3_insert_depth = 6.0;
 m3_clearance_d = 3.2;
+
+// Toggle this to switch between self-tapping and threaded inserts
+use_threaded_inserts = true;
 
 module rounded_box(l, w, h, r) {
     hull() {
@@ -44,10 +49,13 @@ module box() {
             cube([wall + 2, 12, 10]);
             
         // Screw Holes
+        screw_hole_d = use_threaded_inserts ? m3_insert_d : m3_pilot_d;
+        screw_hole_h = use_threaded_inserts ? m3_insert_depth : 12;
+        
         for (x = [wall + 5, inner_l + wall - 5])
             for (y = [wall + 5, inner_w + wall - 5])
-                translate([x, y, height - 12])
-                    cylinder(d = m3_pilot_d, h = 13);
+                translate([x, y, height - screw_hole_h + 0.1])
+                    cylinder(d = screw_hole_d, h = screw_hole_h);
     }
     
     // Inverted Corner Supports (45 degree slope for supportless printing)

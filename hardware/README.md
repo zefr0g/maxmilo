@@ -12,6 +12,7 @@ Ce dossier contient les informations sur les composants physiques et le processu
 | 1 | Adaptateur Série ESP-01 | Régulateur 5V et adaptateur de niveau | ~$1.50 |
 | 1 | JST PAP-05V-S | Connecteur 5 broches (pour CN105) | ~$0.50 |
 | 1 | Boîtier imprimé 3D | Boîtier pour les modules | (Minimal) |
+| 4 | Inserts filetés M3 | Inserts à chaud pour fixer le couvercle | ~$1.00 |
 
 ## 💰 Acheter le Kit
 

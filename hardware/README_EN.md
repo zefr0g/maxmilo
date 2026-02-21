@@ -11,6 +11,7 @@ This folder contains information about the physical components and the assembly 
 | 1 | JST PAP-05V-S | 5-pin 2.0mm pitch connector (for CN105) | ~$0.50 |
 | 5 | Female DuPont Wires | To connect adapter to CN105 (if not using a custom cable) | ~$0.50 |
 | 1 | Custom 3D Printed Case | Enclosure for the modules | (Minimal) |
+| 4 | M3 Threaded Inserts | Heat-set inserts for fixing the lid | ~$1.00 |
 
 ## 💰 Buy the Kit
 
