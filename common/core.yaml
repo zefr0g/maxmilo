@@ -1,0 +1,19 @@
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  name_add_mac_suffix: true
+  project:
+    name: "maxmilo.mitsubishi-hvac"
+    version: "1.0.0"
+
+logger:
+  hardware_uart: UART1
+  level: INFO
+
+api:
+
+ota:
+  - platform: esphome
+
+web_server:
+  port: 80

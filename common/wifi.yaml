@@ -1,0 +1,7 @@
+wifi:
+  ap:
+    ssid: "${friendly_name} Setup"
+
+captive_portal:
+
+improv_serial:

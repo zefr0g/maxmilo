@@ -1,0 +1,15 @@
+# ESPHome build artifacts
+.esphome/
+.temp/
+build/
+
+# Secrets
+secrets.yaml
+
+# Local development
+*.local
+.vscode/
+.idea/
+
+# Mac OS
+.DS_Store

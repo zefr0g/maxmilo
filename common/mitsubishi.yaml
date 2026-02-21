@@ -1,0 +1,25 @@
+# Optional substitutions defaults
+substitutions:
+  remote_temp_sensor: "none"
+
+external_components:
+  - source: github://echavet/MitsubishiCN105ESPHome@main
+    components: [ cn105 ]
+
+uart:
+  id: uart_bus
+  tx_pin: ${tx_pin}
+  rx_pin: ${rx_pin}
+  baud_rate: 2400
+  parity: EVEN
+  stop_bits: 1
+
+climate:
+  - platform: cn105
+    name: "${friendly_name}"
+    id: ${climate_id}
+    uart_id: uart_bus
+    # Remote sensor is optional. If left as "none", it won't be used.
+    # Note: the cn105 component usually needs a valid sensor ID or it should be omitted.
+    # We will let the user uncomment it in their main yaml if they need it.
+    # remote_temp_sensor: ${remote_temp_sensor}
