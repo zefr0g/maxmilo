@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>maxmilo - Installateur Web</title>
+    <script
+      type="module"
+      src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"
+    ></script>
+    <style>
+      body {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Ubuntu, sans-serif;
+        padding: 0;
+        margin: 0;
+        line-height: 1.4;
+        background-color: #f4f4f4;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 600px;
+        margin-top: 50px;
+        padding: 30px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+      h1 { margin-top: 0; color: #007bff; }
+      p { margin-bottom: 20px; }
+      .button-row {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      esp-web-install-button {
+        --esp-tools-button-border-radius: 4px;
+        --esp-tools-button-color: #007bff;
+      }
+      footer {
+        margin-top: auto;
+        padding: 20px;
+        font-size: 0.9em;
+        color: #666;
+      }
+      a { color: #007bff; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>maxmilo Installer</h1>
+      <p>
+        Bienvenue ! Cet outil vous permet d'installer le firmware <strong>maxmilo</strong> directement depuis votre navigateur.
+      </p>
+      <p>
+        Connectez votre ESP-01 (via USB) et cliquez sur "Connect".
+      </p>
+
+      <div class="button-row">
+        <esp-web-install-button
+          manifest="manifest.json"
+        ></esp-web-install-button>
+      </div>
+
+      <p style="margin-top: 30px; font-size: 0.9em; color: #666;">
+        Compatible avec Chrome, Edge et Opera.<br>
+        Assurez-vous d'avoir les drivers CH340/CP2102 installés.
+      </p>
+    </div>
+
+    <footer>
+      <p>
+        Retour au projet <a href="https://github.com/zefr0g/maxmilo">GitHub</a>
+      </p>
+    </footer>
+  </body>
+</html>

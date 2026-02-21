@@ -6,6 +6,11 @@ Il offre une interface moderne via Home Assistant ou un navigateur web, et dispo
 
 [🇬🇧 Read the English version here](README_EN.md)
 
+<p align="center">
+  <img src="images/assembled_unit.jpg" alt="maxmilo Unit" width="300" />
+  <img src="images/ha_dashboard.jpg" alt="Home Assistant Dashboard" width="300" />
+</p>
+
 ## 🚀 Fonctionnalités
 
 - **Portail Captif WiFi :** Connectez-vous au point d'accès du module pour configurer votre réseau local.
@@ -34,9 +39,16 @@ Pour fabriquer ce contrôleur, vous aurez besoin de :
 
 > ⚠️ **Attention :** Assurez-vous que votre adaptateur gère bien la conversion de niveau 5V vers 3.3V pour protéger l'ESP-01.
 
-## 💻 Installation Logicielle
+## 💻 Installation
 
-### 1. Installer ESPHome
+### Option A : Installateur Web (Recommandé)
+Flashez votre ESP-01 directement depuis votre navigateur (Chrome/Edge) sans rien installer !
+👉 **[Cliquez ici pour utiliser l'Installateur Web maxmilo](https://zefr0g.github.io/maxmilo/web_installer/)**
+
+### Option B : Installation Manuelle (CLI)
+Si vous préférez compiler vous-même :
+
+#### 1. Installer ESPHome
 Si vous ne l'avez pas déjà fait :
 ```bash
 pip install esphome
