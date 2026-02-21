@@ -20,3 +20,13 @@ ota:
 
 web_server:
   port: 80
+
+# Champ texte pour que le client puisse renommer son unité (stocké en mémoire flash)
+text:
+  - platform: template
+    name: "Nom de l'unité"
+    id: custom_device_name
+    optimistic: true
+    restore_value: true
+    initial_value: "maxmilo"
+    mode: text
