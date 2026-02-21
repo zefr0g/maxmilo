@@ -16,8 +16,8 @@ This folder contains information about the physical components and the assembly 
 
 Don't want to source the parts yourself? Buy a pre-tested kit directly from me!
 
-- **DIY Kit (10€ + Shipping):** All components (ESP-01, Adapter, Connector, 3D Printed Case) included. You assemble and flash.
-- **Assembled & Pre-flashed (15€ + Shipping):** Ready to plug-and-play. I will pre-flash it with your WiFi credentials if provided.
+- **DIY Kit:** All components (ESP-01, Adapter, Connector, 3D Printed Case) included. You assemble and flash.
+- **Assembled & Pre-flashed:** Ready to plug-and-play. I will pre-flash it with your WiFi credentials if provided.
 
 ### How to Order
 To purchase, please [open an issue](https://github.com/zefr0g/maxmilo/issues) or contact me at: **[Insert Your Email/PayPal/Link Here]**

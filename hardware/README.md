@@ -15,8 +15,8 @@ Ce dossier contient les informations sur les composants physiques et le processu
 
 ## 💰 Acheter le Kit
 
-- **Kit DIY (10€ + Frais de port) :** Tous les composants inclus. Vous assemblez et flashez.
-- **Assemblé & Pré-flashé (15€ + Frais de port) :** Prêt à l'emploi.
+- **Kit DIY :** Tous les composants inclus. Vous assemblez et flashez.
+- **Assemblé & Pré-flashé :** Prêt à l'emploi.
 
 ### Comment commander
 Pour acheter, merci d'**[ouvrir une issue sur GitHub](https://github.com/zefr0g/maxmilo/issues)**.

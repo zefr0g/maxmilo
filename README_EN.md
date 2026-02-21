@@ -63,7 +63,7 @@ esphome run example.yaml
 ```
 
 ## 💰 Buy a Kit
-Don't want to source the parts yourself? [Open an Issue on GitHub](https://github.com/zefr0g/maxmilo/issues) to order a ready-to-use kit (10€).
+Don't want to source the parts yourself? [Open an Issue on GitHub](https://github.com/zefr0g/maxmilo/issues) to order a ready-to-use kit.
 
 ## 🤝 Contributing
 Contributions are welcome! Feel free to open issues or pull requests.
