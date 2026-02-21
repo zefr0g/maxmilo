@@ -45,7 +45,7 @@ esphome run example.yaml
 ```
 
 ### 3. WiFi Configuration
-1. Once flashed and powered, the device will create a WiFi hotspot named `mitsucouloir Setup` (or similar).
+1. Once flashed and powered, the device will create a WiFi hotspot named `My HVAC Setup` (or the name you chose).
 2. Connect to it with your smartphone.
 3. A portal should open automatically. Select your home WiFi and enter the password.
 4. The device will restart and connect to your network.
