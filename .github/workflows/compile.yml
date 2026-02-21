@@ -1,0 +1,38 @@
+name: Compile and Update Firmware
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.yaml'
+      - '**.py'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install ESPHome
+        run: pip install esphome
+
+      - name: Compile Firmware
+        run: esphome compile example.yaml
+
+      - name: Copy Binary
+        run: |
+          mkdir -p web_installer/firmware
+          cp .esphome/build/mon-hvac/.pioenvs/mon-hvac/firmware.bin web_installer/firmware/maxmilo-esp8266.bin
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add web_installer/firmware/maxmilo-esp8266.bin
+          git commit -m "chore: automated firmware build [skip ci]" || echo "No changes to commit"
+          git push

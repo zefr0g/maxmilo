@@ -4,7 +4,24 @@ esphome:
   name_add_mac_suffix: true
   project:
     name: "maxmilo.mitsubishi-hvac"
-    version: "1.0.0"
+    version: "1.1.0"
+
+# Diagnostic Sensors
+sensor:
+  - platform: uptime
+    name: "Uptime"
+  - platform: wifi_signal
+    name: "WiFi Signal"
+    update_interval: 60s
+
+# Watchdog: Reboot if WiFi is lost for too long
+wifi:
+  reboot_timeout: 15min
+
+# Status LED (Note: ESP-01 LED is often on TX/GPIO1, which is used for HVAC)
+# We use GPIO2 (UART1 TX) for logging and potentially status.
+status_led:
+  pin: GPIO2
 
 dashboard_import:
   package_import_url: github://zefr0g/maxmilo/example.yaml

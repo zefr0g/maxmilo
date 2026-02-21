@@ -21,7 +21,12 @@ Il offre une interface moderne via Home Assistant ou un navigateur web, et dispo
 - **Installation en un clic :** Via l'installateur web, sans ligne de commande.
 - **Portail Captif WiFi :** Connectez-vous au point d'accès du module pour configurer votre réseau local.
 - **Renommage dynamique :** Changez le nom de votre unité directement depuis l'interface web.
+- **Diagnostics Avancés :** Suivi de la force du signal WiFi (RSSI) et de l'uptime.
 - **Intégration Home Assistant :** Découverte automatique via l'API Native.
+
+## 📖 Documentation
+- **[Guide d'Installation Étape par Étape](docs/installation.md)**
+- **[Plan de la future carte PCB](docs/pcb_plan.md)**
 - **Matériel Open Source :** Boîtier imprimable en 3D avec fixations sécurisées.
 
 ## 🛠 Matériel Requis

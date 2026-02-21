@@ -19,7 +19,12 @@ It provides a modern interface via Home Assistant or a standalone web browser, a
 - **One-Click Installation:** Via the web installer, no command line needed.
 - **WiFi Captive Portal:** Connect to the device's own WiFi to configure your local network settings.
 - **Dynamic Renaming:** Change your unit's name directly from the web interface.
+- **Advanced Diagnostics:** Monitor WiFi signal strength (RSSI) and uptime.
 - **Home Assistant Integration:** Automatic discovery via the Native API.
+
+## 📖 Documentation
+- **[Step-by-Step Installation Guide (French)](docs/installation.md)**
+- **[Future PCB Design Plan](docs/pcb_plan.md)**
 - **Open Source Hardware:** 3D printable enclosure with secure mounting.
 
 ## 🛠 Hardware Required

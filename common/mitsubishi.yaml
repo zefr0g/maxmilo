@@ -3,7 +3,7 @@ substitutions:
   remote_temp_sensor: "none"
 
 external_components:
-  - source: github://echavet/MitsubishiCN105ESPHome@main
+  - source: github://echavet/MitsubishiCN105ESPHome@v1.6.7
     components: [ cn105 ]
 
 uart:
