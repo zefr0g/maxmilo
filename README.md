@@ -1,6 +1,6 @@
 # maxmilo - Contrôleur ESPHome pour Climatiseurs Mitsubishi
 
-Ce projet vous permet de contrôler votre unité CVC Mitsubishi (avec un port CN105) en utilisant un ESP8266 (ESP-01) et ESPHome. Il est basé sur l'excellent travail de [echavet/MitsubishiCN105ESPHome](https://github.com/echavet/MitsubishiCN105ESPHome).
+Ce projet vous permet de contrôler votre unité CVC Mitsubishi (avec un port CN105) en utilisant un ESP8266 (ESP-01) et ESPHome. Il remplace l'interface WiFi Mitsubishi originale **MAC-587IF-E** pour une fraction du prix, tout en offrant plus de fonctionnalités. Il est basé sur l'excellent travail de [echavet/MitsubishiCN105ESPHome](https://github.com/echavet/MitsubishiCN105ESPHome).
 
 Il offre une interface moderne via Home Assistant ou un navigateur web, et dispose d'un portail captif pour une configuration WiFi facile.
 
