@@ -5,6 +5,8 @@ esphome:
   project:
     name: "maxmilo.mitsubishi-hvac"
     version: "1.0.0"
+  dashboard_import:
+    package_import_url: github://zefr0g/maxmilo/example.yaml
 
 logger:
   hardware_uart: UART1
