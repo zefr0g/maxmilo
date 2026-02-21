@@ -13,7 +13,7 @@ pcb_h_offset = 3;
 // Enclosure Dimensions - Increased margin for safety
 inner_l = pcb_l + 16; 
 inner_w = pcb_w + 16;
-height = 26; // Slightly taller for better clearance
+height = 22; // Slimmer profile (down from 26mm)
 wall = 2.2;  // Thicker walls for better insert retention
 corner_r = 6;
 
