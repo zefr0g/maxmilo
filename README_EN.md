@@ -1,6 +1,8 @@
 # maxmilo - Mitsubishi HVAC ESPHome Controller
 
-This project allows you to control your Mitsubishi HVAC unit (with a CN105 port) using an ESP8266 (ESP-01) and ESPHome. It provides a modern interface via Home Assistant or a standalone web browser, and features a captive portal for easy WiFi configuration.
+This project allows you to control your Mitsubishi HVAC unit (with a CN105 port) using an ESP8266 (ESP-01) and ESPHome. It is based on the excellent work of [echavet/MitsubishiCN105ESPHome](https://github.com/echavet/MitsubishiCN105ESPHome).
+
+It provides a modern interface via Home Assistant or a standalone web browser, and features a captive portal for easy WiFi configuration.
 
 ## 🚀 Features
 
