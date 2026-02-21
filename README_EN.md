@@ -4,12 +4,23 @@ This project allows you to control your Mitsubishi HVAC unit (with a CN105 port)
 
 It provides a modern interface via Home Assistant or a standalone web browser, and features a captive portal for easy WiFi configuration.
 
+<p align="center">
+  <img src="docs/enclosure_render.png" alt="3D Enclosure Render" width="600" />
+</p>
+
+<p align="center">
+  <img src="docs/esp.png" alt="ESP-01 and CN105 cable" width="200" />
+  <img src="docs/ha_control1.png" alt="Home Assistant Interface 1" width="300" />
+  <img src="docs/ha_control2.png" alt="Home Assistant Interface 2" width="300" />
+</p>
+
 ## 🚀 Features
 
+- **One-Click Installation:** Via the web installer, no command line needed.
 - **WiFi Captive Portal:** Connect to the device's own WiFi to configure your local network settings.
-- **Standalone Web Interface:** Control your AC directly from your smartphone browser.
+- **Dynamic Renaming:** Change your unit's name directly from the web interface.
 - **Home Assistant Integration:** Automatic discovery via the Native API.
-- **Open Source Hardware:** Simple, affordable components.
+- **Open Source Hardware:** 3D printable enclosure with secure mounting.
 
 ## 🛠 Hardware Required
 
@@ -18,7 +29,7 @@ To build this controller, you will need:
 1.  **ESP8266 ESP-01 Module**
 2.  **ESP-01 Serial WiFi Wireless Adapter Module** (Provides 5V to 3.3V regulation and logic level shifting)
 3.  **JST PAP-05V-S Connector** (5-pin connector for the CN105 port)
-4.  **Enclosure** (3D printed or off-the-shelf)
+4.  **maxmilo Enclosure** (SCAD file provided in `hardware/`)
 
 ### Wiring Diagram (CN105 to ESP-01)
 
@@ -34,29 +45,25 @@ To build this controller, you will need:
 
 ## 💻 Software Setup
 
-### 1. Install ESPHome
-If you haven't already, install ESPHome:
+### Option A: Web Installer (Recommended)
+Flash your ESP-01 directly from your browser (Chrome/Edge) without installing anything!
+👉 **[Click here to use the maxmilo Web Installer](https://zefr0g.github.io/maxmilo/web_installer/)**
+
+### Option B: Manual Installation (CLI)
+If you prefer to compile yourself:
+
+#### 1. Install ESPHome
 ```bash
 pip install esphome
 ```
 
-### 2. Flash the Firmware
-Connect your ESP-01 to your computer using a USB-to-Serial programmer and run:
+#### 2. Flash the Firmware
 ```bash
 esphome run example.yaml
 ```
 
-### 3. WiFi Configuration
-1. Once flashed and powered, the device will create a WiFi hotspot named `My HVAC Setup` (or the name you chose).
-2. Connect to it with your smartphone.
-3. A portal should open automatically. Select your home WiFi and enter the password.
-4. The device will restart and connect to your network.
-
-## 📂 Project Structure
-
-- `common/`: Modular ESPHome configuration files.
-- `hardware/`: PCB designs and enclosure files (STLs).
-- `example.yaml`: Template configuration for your HVAC unit.
+## 💰 Buy a Kit
+Don't want to source the parts yourself? [Open an Issue on GitHub](https://github.com/zefr0g/maxmilo/issues) to order a ready-to-use kit (10€).
 
 ## 🤝 Contributing
 Contributions are welcome! Feel free to open issues or pull requests.

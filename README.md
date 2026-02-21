@@ -7,16 +7,22 @@ Il offre une interface moderne via Home Assistant ou un navigateur web, et dispo
 [🇬🇧 Read the English version here](README_EN.md)
 
 <p align="center">
-  <img src="images/assembled_unit.jpg" alt="maxmilo Unit" width="300" />
-  <img src="images/ha_dashboard.jpg" alt="Home Assistant Dashboard" width="300" />
+  <img src="docs/enclosure_render.png" alt="Rendu 3D du boîtier" width="600" />
+</p>
+
+<p align="center">
+  <img src="docs/esp.png" alt="ESP-01 et câble CN105" width="200" />
+  <img src="docs/ha_control1.png" alt="Interface Home Assistant 1" width="300" />
+  <img src="docs/ha_control2.png" alt="Interface Home Assistant 2" width="300" />
 </p>
 
 ## 🚀 Fonctionnalités
 
+- **Installation en un clic :** Via l'installateur web, sans ligne de commande.
 - **Portail Captif WiFi :** Connectez-vous au point d'accès du module pour configurer votre réseau local.
-- **Interface Web Standalone :** Contrôlez votre climatisation directement depuis votre smartphone.
+- **Renommage dynamique :** Changez le nom de votre unité directement depuis l'interface web.
 - **Intégration Home Assistant :** Découverte automatique via l'API Native.
-- **Matériel Open Source :** Composants simples et abordables.
+- **Matériel Open Source :** Boîtier imprimable en 3D avec fixations sécurisées.
 
 ## 🛠 Matériel Requis
 
@@ -25,7 +31,7 @@ Pour fabriquer ce contrôleur, vous aurez besoin de :
 1.  **Module ESP8266 ESP-01**
 2.  **Adaptateur Série WiFi ESP-01** (Assure la régulation 5V vers 3.3V et l'adaptation de niveau logique)
 3.  **Connecteur JST PAP-05V-S** (Connecteur 5 broches pour le port CN105)
-4.  **Boîtier** (Imprimé en 3D ou standard)
+4.  **Boîtier maxmilo** (Fichier SCAD fourni dans `hardware/`)
 
 ### Schéma de câblage (CN105 vers ESP-01)
 
@@ -49,27 +55,17 @@ Flashez votre ESP-01 directement depuis votre navigateur (Chrome/Edge) sans rien
 Si vous préférez compiler vous-même :
 
 #### 1. Installer ESPHome
-Si vous ne l'avez pas déjà fait :
 ```bash
 pip install esphome
 ```
 
-### 2. Flasher le Firmware
-Connectez votre ESP-01 à votre ordinateur et lancez :
+#### 2. Flasher le Firmware
 ```bash
 esphome run example.yaml
 ```
 
-### 3. Configuration WiFi
-1. Une fois flashé et alimenté, l'appareil créera un point d'accès nommé `Mon HVAC Setup` (ou le nom choisi).
-2. Connectez-vous avec votre smartphone.
-3. Un portail s'ouvrira automatiquement. Sélectionnez votre WiFi et entrez le mot de passe.
-
-## 📂 Structure du Projet
-
-- `common/`: Fichiers de configuration ESPHome modulaires.
-- `hardware/`: Fichiers de conception (SCAD) et boîtiers.
-- `example.yaml`: Modèle de configuration pour votre unité.
-
 ## 💰 Acheter un Kit
 Vous ne voulez pas sourcer les pièces vous-même ? [Ouvrez une Issue sur GitHub](https://github.com/zefr0g/maxmilo/issues) pour commander un kit prêt à l'emploi (10€).
+
+## 🤝 Contribution
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
