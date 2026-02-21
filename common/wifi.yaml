@@ -1,6 +1,6 @@
 wifi:
   ap:
-    ssid: "${friendly_name} Setup"
+    ssid: "${friendly_name} Configuration"
 
 captive_portal:
 

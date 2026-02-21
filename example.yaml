@@ -2,9 +2,9 @@
 # Copy this file to your own config (e.g., my-ac.yaml) and customize.
 
 substitutions:
-  name: my-ac
-  friendly_name: "My HVAC"
-  climate_id: my_ac_climate
+  name: mon-hvac
+  friendly_name: "Ma Climatisation"
+  climate_id: ma_clim_id
   
   # Set the UART pins for ESP-01 (TX=GPIO1, RX=GPIO3)
   tx_pin: TX

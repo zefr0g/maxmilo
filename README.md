@@ -1,60 +1,61 @@
-# maxmilo - Mitsubishi HVAC ESPHome Controller
+# maxmilo - Contrôleur ESPHome pour Climatiseurs Mitsubishi
 
-This project allows you to control your Mitsubishi HVAC unit (with a CN105 port) using an ESP8266 (ESP-01) and ESPHome. It provides a modern interface via Home Assistant or a standalone web browser, and features a captive portal for easy WiFi configuration.
+Ce projet vous permet de contrôler votre unité CVC Mitsubishi (avec un port CN105) en utilisant un ESP8266 (ESP-01) et ESPHome. Il offre une interface moderne via Home Assistant ou un navigateur web, et dispose d'un portail captif pour une configuration WiFi facile.
 
-## 🚀 Features
+[🇬🇧 Read the English version here](README_EN.md)
 
-- **WiFi Captive Portal:** Connect to the device's own WiFi to configure your local network settings.
-- **Standalone Web Interface:** Control your AC directly from your smartphone browser.
-- **Home Assistant Integration:** Automatic discovery via the Native API.
-- **Open Source Hardware:** Simple, affordable components.
+## 🚀 Fonctionnalités
 
-## 🛠 Hardware Required
+- **Portail Captif WiFi :** Connectez-vous au point d'accès du module pour configurer votre réseau local.
+- **Interface Web Standalone :** Contrôlez votre climatisation directement depuis votre smartphone.
+- **Intégration Home Assistant :** Découverte automatique via l'API Native.
+- **Matériel Open Source :** Composants simples et abordables.
 
-To build this controller, you will need:
+## 🛠 Matériel Requis
 
-1.  **ESP8266 ESP-01 Module**
-2.  **ESP-01 Serial WiFi Wireless Adapter Module** (Provides 5V to 3.3V regulation and logic level shifting)
-3.  **JST PAP-05V-S Connector** (5-pin connector for the CN105 port)
-4.  **Enclosure** (3D printed or off-the-shelf)
+Pour fabriquer ce contrôleur, vous aurez besoin de :
 
-### Wiring Diagram (CN105 to ESP-01)
+1.  **Module ESP8266 ESP-01**
+2.  **Adaptateur Série WiFi ESP-01** (Assure la régulation 5V vers 3.3V et l'adaptation de niveau logique)
+3.  **Connecteur JST PAP-05V-S** (Connecteur 5 broches pour le port CN105)
+4.  **Boîtier** (Imprimé en 3D ou standard)
 
-| CN105 Pin | Function | ESP-01 Adapter |
+### Schéma de câblage (CN105 vers ESP-01)
+
+| Broche CN105 | Fonction | Adaptateur ESP-01 |
 | :--- | :--- | :--- |
-| 1 | 12V | Not Connected |
+| 1 | 12V | Non Connecté |
 | 2 | GND | GND |
 | 3 | 5V | VCC (5V) |
 | 4 | TX | RX (GPIO3) |
 | 5 | RX | TX (GPIO1) |
 
-> ⚠️ **Warning:** Ensure your adapter handles 5V to 3.3V logic level shifting to protect the ESP-01.
+> ⚠️ **Attention :** Assurez-vous que votre adaptateur gère bien la conversion de niveau 5V vers 3.3V pour protéger l'ESP-01.
 
-## 💻 Software Setup
+## 💻 Installation Logicielle
 
-### 1. Install ESPHome
-If you haven't already, install ESPHome:
+### 1. Installer ESPHome
+Si vous ne l'avez pas déjà fait :
 ```bash
 pip install esphome
 ```
 
-### 2. Flash the Firmware
-Connect your ESP-01 to your computer using a USB-to-Serial programmer and run:
+### 2. Flasher le Firmware
+Connectez votre ESP-01 à votre ordinateur et lancez :
 ```bash
 esphome run example.yaml
 ```
 
-### 3. WiFi Configuration
-1. Once flashed and powered, the device will create a WiFi hotspot named `My HVAC Setup` (or the name you chose).
-2. Connect to it with your smartphone.
-3. A portal should open automatically. Select your home WiFi and enter the password.
-4. The device will restart and connect to your network.
+### 3. Configuration WiFi
+1. Une fois flashé et alimenté, l'appareil créera un point d'accès nommé `Mon HVAC Setup` (ou le nom choisi).
+2. Connectez-vous avec votre smartphone.
+3. Un portail s'ouvrira automatiquement. Sélectionnez votre WiFi et entrez le mot de passe.
 
-## 📂 Project Structure
+## 📂 Structure du Projet
 
-- `common/`: Modular ESPHome configuration files.
-- `hardware/`: PCB designs and enclosure files (STLs).
-- `example.yaml`: Template configuration for your HVAC unit.
+- `common/`: Fichiers de configuration ESPHome modulaires.
+- `hardware/`: Fichiers de conception (SCAD) et boîtiers.
+- `example.yaml`: Modèle de configuration pour votre unité.
 
-## 🤝 Contributing
-Contributions are welcome! Feel free to open issues or pull requests.
+## 💰 Acheter un Kit
+Vous ne voulez pas sourcer les pièces vous-même ? [Ouvrez une Issue sur GitHub](https://github.com/zefr0g/maxmilo/issues) pour commander un kit prêt à l'emploi (10€).
