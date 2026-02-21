@@ -37,8 +37,27 @@ module rounded_box(l, w, h, r) {
 
 module box() {
     difference() {
-        // Outer Body
-        rounded_box(inner_l + 2*wall, inner_w + 2*wall, height, corner_r);
+        union() {
+            // Outer Body
+            rounded_box(inner_l + 2*wall, inner_w + 2*wall, height, corner_r);
+            
+            // Inverted Corner Supports (45 degree slope for supportless printing)
+            // Integrated into union so they can be subtracted from later
+            for (x = [wall, inner_l + wall - 10])
+                for (y = [wall, inner_w + wall - 10])
+                    translate([x, y, height - 10])
+                    intersection() {
+                        cube([10, 10, 10]);
+                        hull() {
+                            translate([0,0,9]) cube([10,10,1]);
+                            // Stronger anchor point
+                            if (x == wall && y == wall) translate([0,0,0]) cube([3,3,3]);
+                            if (x > wall && y == wall) translate([7,0,0]) cube([3,3,3]);
+                            if (x == wall && y > wall) translate([0,7,0]) cube([3,3,3]);
+                            if (x > wall && y > wall) translate([7,7,0]) cube([3,3,3]);
+                        }
+                    }
+        }
         
         // Inner Cavity
         translate([wall, wall, wall])
@@ -48,7 +67,7 @@ module box() {
         translate([inner_l + wall - 1, (inner_w + 2*wall)/2 - 6, wall + 5])
             cube([wall + 2, 12, 10]);
             
-        // Screw Holes
+        // Screw Holes (Now subtracts from BOTH walls and corner supports)
         screw_hole_d = use_threaded_inserts ? m3_insert_d : m3_pilot_d;
         screw_hole_h = use_threaded_inserts ? m3_insert_depth : 12;
         
@@ -57,22 +76,6 @@ module box() {
                 translate([x, y, height - screw_hole_h + 0.1])
                     cylinder(d = screw_hole_d, h = screw_hole_h);
     }
-    
-    // Inverted Corner Supports (45 degree slope for supportless printing)
-    for (x = [wall, inner_l + wall - 10])
-        for (y = [wall, inner_w + wall - 10])
-            translate([x, y, height - 10])
-            intersection() {
-                cube([10, 10, 10]);
-                hull() {
-                    translate([0,0,9]) cube([10,10,1]);
-                    // Stronger anchor point
-                    if (x == wall && y == wall) translate([0,0,0]) cube([3,3,3]);
-                    if (x > wall && y == wall) translate([7,0,0]) cube([3,3,3]);
-                    if (x == wall && y > wall) translate([0,7,0]) cube([3,3,3]);
-                    if (x > wall && y > wall) translate([7,7,0]) cube([3,3,3]);
-                }
-            }
 
     // PCB Mounting Posts
     translate([wall + (inner_l-pcb_l)/2, wall + (inner_w-pcb_w)/2, wall]) {
