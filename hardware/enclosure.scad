@@ -102,7 +102,7 @@ module lid() {
         // Branding
         translate([(inner_l+2*wall)/2, (inner_w+2*wall)/2, wall + 1.0])
             linear_extrude(height = 1)
-                text("maxmilo", size = 8, font = "Liberation Sans:style=Bold", halign = "center", valign = "center");
+                text("MaxMiLo", size = 9, font = "Liberation Sans:style=Bold", halign = "center", valign = "center");
     }
 }
 
