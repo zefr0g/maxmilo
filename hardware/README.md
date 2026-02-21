@@ -32,4 +32,6 @@ Pour acheter, merci d'**[ouvrir une issue sur GitHub](https://github.com/zefr0g/
 3.  **Insérer l'ESP-01 :** Branchez le module dans le socket de l'adaptateur.
 
 ## 📂 Fichiers du Boîtier
-- `enclosure.scad` : Script OpenSCAD personnalisable.
+- `enclosure.scad` : Script OpenSCAD professionnel et rapide.
+- `box.stl` : Le corps principal du boîtier.
+- `lid.stl` : Le couvercle avec gravure "maxmilo".

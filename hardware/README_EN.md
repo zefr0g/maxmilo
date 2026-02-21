@@ -35,5 +35,6 @@ To purchase, please [open an issue](https://github.com/zefr0g/maxmilo/issues) or
 5.  **Enclosure:** Secure the components inside the 3D printed case and route the cable out.
 
 ## 📂 Enclosure Files
-- `enclosure.scad`: Customizable OpenSCAD script for 3D printing.
-- `enclosure.stl`: (Export from OpenSCAD for printing).
+- `enclosure.scad`: Professional, fast-rendering OpenSCAD script.
+- `box.stl`: Main enclosure body.
+- `lid.stl`: Lid with "maxmilo" branding.
