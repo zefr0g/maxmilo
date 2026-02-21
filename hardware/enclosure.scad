@@ -37,12 +37,16 @@ module rounded_box(l, w, h, r) {
 
 module box() {
     difference() {
+        // 1. Create the Shell + Supports
         union() {
-            // Outer Body
-            rounded_box(inner_l + 2*wall, inner_w + 2*wall, height, corner_r);
+            // Hollow Shell
+            difference() {
+                rounded_box(inner_l + 2*wall, inner_w + 2*wall, height, corner_r);
+                translate([wall, wall, wall])
+                    rounded_box(inner_l, inner_w, height + 1, corner_r - wall/2);
+            }
             
-            // Inverted Corner Supports (45 degree slope for supportless printing)
-            // Integrated into union so they can be subtracted from later
+            // Inverted Corner Supports (Hanging from the top)
             for (x = [wall, inner_l + wall - 10])
                 for (y = [wall, inner_w + wall - 10])
                     translate([x, y, height - 10])
@@ -50,7 +54,7 @@ module box() {
                         cube([10, 10, 10]);
                         hull() {
                             translate([0,0,9]) cube([10,10,1]);
-                            // Stronger anchor point
+                            // Anchor points
                             if (x == wall && y == wall) translate([0,0,0]) cube([3,3,3]);
                             if (x > wall && y == wall) translate([7,0,0]) cube([3,3,3]);
                             if (x == wall && y > wall) translate([0,7,0]) cube([3,3,3]);
@@ -59,25 +63,22 @@ module box() {
                     }
         }
         
-        // Inner Cavity
-        translate([wall, wall, wall])
-            rounded_box(inner_l, inner_w, height + 1, corner_r - wall/2);
-            
+        // 2. Subtract Functional Cutouts and Holes
         // Cable Cutout
         translate([inner_l + wall - 1, (inner_w + 2*wall)/2 - 6, wall + 5])
             cube([wall + 2, 12, 10]);
             
-        // Screw Holes (Now subtracts from BOTH walls and corner supports)
+        // Screw Holes (Deeper subtraction for the inserts)
         screw_hole_d = use_threaded_inserts ? m3_insert_d : m3_pilot_d;
         screw_hole_h = use_threaded_inserts ? m3_insert_depth : 12;
         
         for (x = [wall + 5, inner_l + wall - 5])
             for (y = [wall + 5, inner_w + wall - 5])
                 translate([x, y, height - screw_hole_h + 0.1])
-                    cylinder(d = screw_hole_d, h = screw_hole_h);
+                    cylinder(d = screw_hole_d, h = screw_hole_h + 1);
     }
 
-    // PCB Mounting Posts
+    // 3. Add PCB Mounting Posts (Separate to avoid accidental subtraction)
     translate([wall + (inner_l-pcb_l)/2, wall + (inner_w-pcb_w)/2, wall]) {
         off_x = (pcb_l - pcb_hole_dist_x)/2;
         off_y = (pcb_w - pcb_hole_dist_y)/2;
@@ -87,7 +88,7 @@ module box() {
                 translate([ax, ay, 0])
                     difference() {
                         cylinder(d = 6, h = pcb_h_offset);
-                        translate([0,0,1]) cylinder(d = 2.0, h = pcb_h_offset);
+                        translate([0,0,1]) cylinder(d = 2.0, h = pcb_h_offset + 1);
                     }
     }
 }
