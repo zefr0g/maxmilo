@@ -1,7 +1,11 @@
 wifi:
   ap:
-    ssid: "${friendly_name} Configuration"
+    # Le nom du WiFi de secours sera unique, ex: "Ma Clim Setup-a1b2c3"
+    ssid: "${friendly_name} Setup"
 
 captive_portal:
+
+# Permet la configuration WiFi via USB sur l'installateur Web
+improv_serial:
 
 improv_serial:
